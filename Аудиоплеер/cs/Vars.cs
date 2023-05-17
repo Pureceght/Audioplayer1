@@ -4,9 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Аудиоплеер.cs
+namespace Аудиоплеер
 {
-    internal class Vars
+    /// <summary>
+    /// Список полных имен файлов
+    /// </summary>
+    public static class Vars
     {
+        public static List<string> Files = new List<string>();
+
+        public static string GerFileName(string file)
+        {
+            string[] tmp = file.Split('\\');
+            return tmp[tmp.Length - 1];
+        }
     }
 }

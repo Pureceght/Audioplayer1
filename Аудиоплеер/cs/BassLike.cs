@@ -78,7 +78,7 @@ namespace Аудиоплеер
         public static int GetPosOfStream(int stream)
         {
             long pos = Bass.BASS_ChannelGetPosition(stream);
-            int posSec = (int)Bass.BASS_ChannelBytes2Seconds(stream, posSec);
+            int posSec = (int)Bass.BASS_ChannelBytes2Seconds(stream, pos);
             return posSec;
         }
 

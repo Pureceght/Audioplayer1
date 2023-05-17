@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Playlist = new System.Windows.Forms.ListBox();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
@@ -36,6 +37,8 @@
             this.slVol = new MB.Controls.ColorSlider();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // Playlist
@@ -57,6 +60,7 @@
             this.btnPlay.Size = new System.Drawing.Size(50, 50);
             this.btnPlay.TabIndex = 1;
             this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // btnStop
             // 
@@ -67,6 +71,7 @@
             this.btnStop.Size = new System.Drawing.Size(50, 50);
             this.btnStop.TabIndex = 2;
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnEj
             // 
@@ -77,6 +82,7 @@
             this.btnEj.Size = new System.Drawing.Size(50, 50);
             this.btnEj.TabIndex = 3;
             this.btnEj.UseVisualStyleBackColor = true;
+            this.btnEj.Click += new System.EventHandler(this.btnEj_Click);
             // 
             // slTime
             // 
@@ -90,6 +96,8 @@
             this.slTime.TabIndex = 4;
             this.slTime.Text = "colorSlider1";
             this.slTime.ThumbRoundRectSize = new System.Drawing.Size(8, 8);
+            this.slTime.Value = 0;
+            this.slTime.Scroll += new System.Windows.Forms.ScrollEventHandler(this.slTime_Scroll);
             // 
             // slVol
             // 
@@ -103,6 +111,8 @@
             this.slVol.TabIndex = 5;
             this.slVol.Text = "colorSlider1";
             this.slVol.ThumbRoundRectSize = new System.Drawing.Size(8, 8);
+            this.slVol.Value = 100;
+            this.slVol.Scroll += new System.Windows.Forms.ScrollEventHandler(this.slVol_Scroll);
             // 
             // label1
             // 
@@ -121,6 +131,16 @@
             this.label2.Size = new System.Drawing.Size(55, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "00:00:00";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -154,6 +174,8 @@
         private MB.Controls.ColorSlider slVol;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

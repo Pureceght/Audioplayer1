@@ -1,0 +1,17 @@
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.csproj.AssemblyReference.cache
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.csproj.SuggestedBindingRedirects.cache
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.Form1.resources
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.Properties.Resources.resources
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.csproj.GenerateResource.cache
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.csproj.CoreCompileInputs.cache
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\bass.dll
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\Аудиоплеер.exe.config
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\Аудиоплеер.exe
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\Аудиоплеер.pdb
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\Bass.Net.dll
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\ColorSlider.dll
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\Bass.Net.xml
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\ColorSlider.pdb
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.csproj.CopyComplete
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.exe
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\obj\Debug\Аудиоплеер.pdb
