@@ -69,5 +69,10 @@ namespace Аудиоплеер
         {
             BassLike.SetVolumeToStream(BassLike.Stream, slVol.Value);
         }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            BassLike.Pause();
+        }
     }
 }

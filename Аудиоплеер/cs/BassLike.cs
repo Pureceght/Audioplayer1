@@ -26,10 +26,25 @@ namespace Аудиоплеер
         /// </summary>
         public static int Volume = 100;
         //^^^ПЕРЕМЕННЫЕ^^^//
-        private static bool InitBass(int hz)
+        private static readonly List<int> BassPluginsHandlers = new List<int>();    
+        public static bool InitBass(int hz)
         {
             if (!InitDefaultDevice)
+            {
                 InitDefaultDevice = Bass.BASS_Init(-1, hz, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero);
+                if (InitDefaultDevice)
+                {
+                    BassPluginsHandlers.Add(Bass.BASS_PluginLoad());
+
+                }
+            }
+                
+
+
+
+
+
+
             return InitDefaultDevice;
         }
         /// <summary>
@@ -39,17 +54,23 @@ namespace Аудиоплеер
         /// <param name="vol"></param>
         public static void Play(string filename, int vol)
         {
-            Stop();
-            if (InitBass(HZ))
+            if (Bass.BASS_ChannelIsActive(Stream) != BASSActive.BASS_ACTIVE_PAUSED)
             {
-                Stream = Bass.BASS_StreamCreateFile(filename, 0, 0, BASSFlag.BASS_DEFAULT);
-                if(Stream != 0)
+                Stop();
+                if (InitBass(HZ))
                 {
-                    Volume = vol;
-                    Bass.BASS_ChannelSetAttribute(Stream, BASSAttribute.BASS_ATTRIB_VOL, Volume / 100);
-                    Bass.BASS_ChannelPlay(Stream, false);
+                    Stream = Bass.BASS_StreamCreateFile(filename, 0, 0, BASSFlag.BASS_DEFAULT);
+                    if (Stream != 0)
+                    {
+                        Volume = vol;
+                        Bass.BASS_ChannelSetAttribute(Stream, BASSAttribute.BASS_ATTRIB_VOL, Volume / 100F);
+                        Bass.BASS_ChannelPlay(Stream, false);
+                    }
+
                 }
             }
+            else
+                Bass.BASS_ChannelPlay(Stream, false);
         }
         /// <summary>
         /// Стоп
@@ -58,6 +79,12 @@ namespace Аудиоплеер
         {
             Bass.BASS_ChannelStop(Stream);
             Bass.BASS_StreamFree(Stream);
+        }
+
+        public static void Pause()
+        {
+            if (Bass.BASS_ChannelIsActive(Stream) == BASSActive.BASS_ACTIVE_PLAYING)
+                Bass.BASS_ChannelPause(Stream);
         }
         /// <summary>
         /// Получение длительности канала в секундах

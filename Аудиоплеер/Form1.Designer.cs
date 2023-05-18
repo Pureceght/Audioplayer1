@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnPause = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Playlist
@@ -50,6 +51,7 @@
             this.Playlist.Size = new System.Drawing.Size(456, 244);
             this.Playlist.TabIndex = 0;
             this.Playlist.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.Playlist.DoubleClick += new System.EventHandler(this.btnPlay_Click);
             // 
             // btnPlay
             // 
@@ -66,7 +68,8 @@
             // 
             this.btnStop.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_stop_1977;
             this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStop.Location = new System.Drawing.Point(122, 359);
+            this.btnStop.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnStop.Location = new System.Drawing.Point(200, 359);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(50, 50);
             this.btnStop.TabIndex = 2;
@@ -87,6 +90,7 @@
             // slTime
             // 
             this.slTime.BackColor = System.Drawing.Color.Transparent;
+            this.slTime.BarInnerColor = System.Drawing.Color.Black;
             this.slTime.BorderRoundRectSize = new System.Drawing.Size(8, 8);
             this.slTime.LargeChange = ((uint)(5u));
             this.slTime.Location = new System.Drawing.Point(39, 305);
@@ -102,6 +106,7 @@
             // slVol
             // 
             this.slVol.BackColor = System.Drawing.Color.Transparent;
+            this.slVol.BarInnerColor = System.Drawing.Color.Black;
             this.slVol.BorderRoundRectSize = new System.Drawing.Size(8, 8);
             this.slVol.LargeChange = ((uint)(5u));
             this.slVol.Location = new System.Drawing.Point(373, 305);
@@ -142,11 +147,25 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnPause
+            // 
+            this.btnPause.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_pause_1018;
+            this.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPause.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPause.Location = new System.Drawing.Point(95, 359);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(50, 50);
+            this.btnPause.TabIndex = 8;
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(543, 450);
+            this.Controls.Add(this.btnPause);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.slVol);
@@ -176,6 +195,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnPause;
     }
 }
 

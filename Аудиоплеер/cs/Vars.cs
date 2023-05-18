@@ -11,6 +11,11 @@ namespace Аудиоплеер
     /// </summary>
     public static class Vars
     {
+        /// <summary>
+        /// Путь к исполняемому файлу
+        /// </summary>
+        public static string AppPath = AppDomain.CurrentDomain.BaseDirectory;
+
         public static List<string> Files = new List<string>();
 
         public static string GerFileName(string file)
