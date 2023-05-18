@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Playlist = new System.Windows.Forms.ListBox();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
@@ -41,14 +42,17 @@
             this.btnPause = new System.Windows.Forms.Button();
             this.slTime = new MB.Controls.ColorSlider();
             this.btn_del = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Плейлист = new System.Windows.Forms.TextBox();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Playlist
             // 
+            this.Playlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Playlist.FormattingEnabled = true;
-            this.Playlist.ItemHeight = 16;
-            this.Playlist.Location = new System.Drawing.Point(39, 28);
+            this.Playlist.ItemHeight = 20;
+            this.Playlist.Location = new System.Drawing.Point(39, 54);
             this.Playlist.Name = "Playlist";
             this.Playlist.Size = new System.Drawing.Size(456, 244);
             this.Playlist.TabIndex = 0;
@@ -59,7 +63,7 @@
             // 
             this.btnPlay.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_play_5157;
             this.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPlay.Location = new System.Drawing.Point(39, 359);
+            this.btnPlay.Location = new System.Drawing.Point(39, 376);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(50, 50);
             this.btnPlay.TabIndex = 1;
@@ -71,7 +75,7 @@
             this.btnStop.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_stop_1977;
             this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStop.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnStop.Location = new System.Drawing.Point(200, 359);
+            this.btnStop.Location = new System.Drawing.Point(198, 376);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(50, 50);
             this.btnStop.TabIndex = 2;
@@ -82,7 +86,7 @@
             // 
             this.btnEj.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_eject_8621;
             this.btnEj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEj.Location = new System.Drawing.Point(445, 359);
+            this.btnEj.Location = new System.Drawing.Point(445, 376);
             this.btnEj.Name = "btnEj";
             this.btnEj.Size = new System.Drawing.Size(50, 50);
             this.btnEj.TabIndex = 3;
@@ -95,7 +99,7 @@
             this.slVol.BarInnerColor = System.Drawing.Color.Black;
             this.slVol.BorderRoundRectSize = new System.Drawing.Size(8, 8);
             this.slVol.LargeChange = ((uint)(5u));
-            this.slVol.Location = new System.Drawing.Point(373, 305);
+            this.slVol.Location = new System.Drawing.Point(373, 320);
             this.slVol.Name = "slVol";
             this.slVol.Size = new System.Drawing.Size(122, 30);
             this.slVol.SmallChange = ((uint)(1u));
@@ -108,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 286);
+            this.label1.Location = new System.Drawing.Point(34, 301);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 6;
@@ -117,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 286);
+            this.label2.Location = new System.Drawing.Point(288, 301);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 16);
             this.label2.TabIndex = 7;
@@ -139,7 +143,7 @@
             this.btnPause.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_pause_1018;
             this.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPause.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPause.Location = new System.Drawing.Point(95, 359);
+            this.btnPause.Location = new System.Drawing.Point(95, 376);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(50, 50);
             this.btnPause.TabIndex = 8;
@@ -152,7 +156,7 @@
             this.slTime.BarInnerColor = System.Drawing.Color.Black;
             this.slTime.BorderRoundRectSize = new System.Drawing.Size(8, 8);
             this.slTime.LargeChange = ((uint)(5u));
-            this.slTime.Location = new System.Drawing.Point(39, 305);
+            this.slTime.Location = new System.Drawing.Point(39, 320);
             this.slTime.Name = "slTime";
             this.slTime.Size = new System.Drawing.Size(304, 30);
             this.slTime.SmallChange = ((uint)(1u));
@@ -165,22 +169,47 @@
             // btn_del
             // 
             this.btn_del.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_del.Location = new System.Drawing.Point(538, 28);
+            this.btn_del.Location = new System.Drawing.Point(538, 54);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(91, 53);
             this.btn_del.TabIndex = 9;
-            this.btn_del.Text = "Delete";
+            this.btn_del.Text = "Удалить";
             this.btn_del.UseVisualStyleBackColor = true;
             this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
             // 
-            // label3
+            // Плейлист
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "label3";
+            this.Плейлист.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Плейлист.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Плейлист.Location = new System.Drawing.Point(39, 20);
+            this.Плейлист.Name = "Плейлист";
+            this.Плейлист.ReadOnly = true;
+            this.Плейлист.Size = new System.Drawing.Size(170, 28);
+            this.Плейлист.TabIndex = 11;
+            this.Плейлист.Text = "Ваш плейлист";
+            // 
+            // btnUp
+            // 
+            this.btnUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUp.Location = new System.Drawing.Point(538, 136);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(91, 43);
+            this.btnUp.TabIndex = 12;
+            this.btnUp.Text = "Вверх по списку";
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDown.Location = new System.Drawing.Point(538, 185);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(91, 43);
+            this.btnDown.TabIndex = 13;
+            this.btnDown.Text = "Вниз по списку";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // Form1
             // 
@@ -188,8 +217,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(673, 450);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(673, 466);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.Плейлист);
             this.Controls.Add(this.btn_del);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.label2);
@@ -201,6 +232,7 @@
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.Playlist);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(691, 497);
             this.Name = "Form1";
@@ -225,7 +257,9 @@
         private MB.Controls.ColorSlider slTime;
         public System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btn_del;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox Плейлист;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnDown;
     }
 }
 

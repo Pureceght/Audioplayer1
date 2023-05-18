@@ -39,7 +39,7 @@ namespace Аудиоплеер
                 TagModel TM = new TagModel(tmp[i]);
                 Playlist.Items.Add(TM.Artist + " - " + TM.Title);
             }
-            tmp = null;
+            
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -62,6 +62,7 @@ namespace Аудиоплеер
             timer1.Enabled = false;
             slTime.Value = 0;
             label1.Text = "00:00:00";
+            label2.Text = "00:00:00";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -95,7 +96,8 @@ namespace Аудиоплеер
         }*/
         private void btn_del_Click(object sender, EventArgs e)
         {
-            if(Playlist.SelectedIndex > 0)
+            int j = Playlist.SelectedIndex;
+            if (Playlist.SelectedIndex > 0)
             {
                 Vars.Files.RemoveAt(Playlist.SelectedIndex);
                 Playlist.Items.RemoveAt(Playlist.SelectedIndex);
@@ -103,7 +105,8 @@ namespace Аудиоплеер
                 timer1.Enabled = false;
                 slTime.Value = 0;
                 label1.Text = "00:00:00";
-                Playlist.SelectedIndex = 0;
+                label2.Text = "00:00:00";
+                Playlist.SelectedIndex = j - 1;
                 //RemoveEl(ref tmp, Playlist.SelectedIndex);
             }
             else if (Playlist.SelectedIndex == 0)
@@ -114,6 +117,8 @@ namespace Аудиоплеер
                 timer1.Enabled = false;
                 slTime.Value = 0;
                 label1.Text = "00:00:00";
+                label2.Text = "00:00:00";
+                //Playlist.SelectedIndex = 0;
             }
             else if (Playlist.Items.Count == 0)
             {
@@ -121,8 +126,53 @@ namespace Аудиоплеер
                 timer1.Enabled = false;
                 slTime.Value = 0;
                 label1.Text = "00:00:00";
+                label2.Text = "00:00:00";
             }                
 
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            
+            if(Playlist.SelectedIndex > 0)
+            {
+                BassLike.Stop();
+                timer1.Enabled = false;
+                slTime.Value = 0;
+                label1.Text = "00:00:00";
+                label2.Text = "00:00:00";
+                int index = Playlist.SelectedIndex;
+                String text = Playlist.SelectedItem.ToString();
+                var R = Vars.Files[Playlist.SelectedIndex];
+                Vars.Files.RemoveAt(Playlist.SelectedIndex);
+                Vars.Files.Insert(index-1, R);
+
+                Playlist.Items.RemoveAt(Playlist.SelectedIndex);
+                Playlist.Items.Insert(index-1, text);
+                
+            }
+
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            if (Playlist.SelectedIndex < Playlist.Items.Count)
+            {
+                BassLike.Stop();
+                timer1.Enabled = false;
+                slTime.Value = 0;
+                label1.Text = "00:00:00";
+                label2.Text = "00:00:00";
+                int index = Playlist.SelectedIndex;
+                String text = Playlist.SelectedItem.ToString();
+                var R = Vars.Files[Playlist.SelectedIndex];
+                Vars.Files.RemoveAt(Playlist.SelectedIndex);
+                Vars.Files.Insert(index + 1, R);
+
+                Playlist.Items.RemoveAt(Playlist.SelectedIndex);
+                Playlist.Items.Insert(index + 1, text);
+
+            }
         }
     }
 }

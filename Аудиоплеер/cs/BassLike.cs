@@ -80,7 +80,7 @@ namespace Аудиоплеер
                         Volume = vol;
                         Bass.BASS_ChannelSetAttribute(Stream, BASSAttribute.BASS_ATTRIB_VOL, Volume / 100F);
                         Bass.BASS_ChannelPlay(Stream, false);
-                    }
+                    }             
 
                 }
             }
