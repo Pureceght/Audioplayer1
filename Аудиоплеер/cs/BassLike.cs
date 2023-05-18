@@ -12,7 +12,7 @@ namespace Аудиоплеер
         /// <summary>
         /// Частота дискретизации
         /// </summary>
-        private static int HZ = 44100;
+        public static int HZ = 44100;
         /// <summary>
         /// Состояние инициализации
         /// </summary>
@@ -26,7 +26,7 @@ namespace Аудиоплеер
         /// </summary>
         public static int Volume = 100;
         //^^^ПЕРЕМЕННЫЕ^^^//
-        private static readonly List<int> BassPluginsHandlers = new List<int>();    
+        private static readonly List<int> BassPluginsHandles = new List<int>();    
         public static bool InitBass(int hz)
         {
             if (!InitDefaultDevice)
@@ -34,8 +34,15 @@ namespace Аудиоплеер
                 InitDefaultDevice = Bass.BASS_Init(-1, hz, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero);
                 if (InitDefaultDevice)
                 {
-                    BassPluginsHandlers.Add(Bass.BASS_PluginLoad());
-
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\bass_tta.dll"));
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\bassalac.dll"));
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\bassape.dll"));
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\bassdsd.dll"));
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\bassflac.dll"));
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\bassmidi.dll"));
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\bassopus.dll"));
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\basswma.dll"));
+                    BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\basswv.dll"));
                 }
             }
                 

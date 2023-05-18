@@ -15,6 +15,7 @@ namespace Аудиоплеер
         public Form1()
         {
             InitializeComponent();
+            BassLike.InitBass(BassLike.HZ);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
