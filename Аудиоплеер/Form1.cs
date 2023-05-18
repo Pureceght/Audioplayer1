@@ -29,8 +29,14 @@ namespace Аудиоплеер
         }
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            Vars.Files.Add(openFileDialog1.FileName);
-            Playlist.Items.Add(Vars.GerFileName(openFileDialog1.FileName));
+
+            string[] tmp = openFileDialog1.FileNames;
+            for (int i = 0; i < tmp.Length; i++)
+            {
+                Vars.Files.Add(tmp[i]);
+                TagModel TM = new TagModel(tmp[i]);
+                Playlist.Items.Add(TM.Artist + " - " + TM.Title);
+            }
         }
 
         private void btnPlay_Click(object sender, EventArgs e)

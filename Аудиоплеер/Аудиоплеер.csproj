@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cs\BassLike.cs" />
+    <Compile Include="cs\TagModel.cs" />
     <Compile Include="cs\Vars.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
