@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Un4seen.Bass;
+using System.Windows.Forms;
 
 namespace Аудиоплеер
 {
@@ -43,9 +44,16 @@ namespace Аудиоплеер
                     BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\bassopus.dll"));
                     BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\basswma.dll"));
                     BassPluginsHandles.Add(Bass.BASS_PluginLoad(Vars.AppPath + @"plugins\basswv.dll"));
+
+                    int ErrorCount = 0;
+                    for (int i = 0; i < BassPluginsHandles.Count; i++)
+                        if (BassPluginsHandles[i] == 0)
+                            ErrorCount++;
+                    if(ErrorCount != 0)
+                        MessageBox.Show(ErrorCount + " плагина(ов) не было загружено", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ErrorCount = 0;
                 }
             }
-                
 
 
 
