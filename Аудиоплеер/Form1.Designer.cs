@@ -49,7 +49,7 @@
             // 
             // Playlist
             // 
-            this.Playlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Playlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Playlist.FormattingEnabled = true;
             this.Playlist.ItemHeight = 20;
             this.Playlist.Location = new System.Drawing.Point(39, 54);
@@ -169,7 +169,7 @@
             // btn_del
             // 
             this.btn_del.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_del.Location = new System.Drawing.Point(538, 54);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(105, 53);
@@ -181,8 +181,7 @@
             // Плейлист
             // 
             this.Плейлист.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Плейлист.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Плейлист.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Плейлист.Location = new System.Drawing.Point(39, 20);
             this.Плейлист.Name = "Плейлист";
             this.Плейлист.ReadOnly = true;
@@ -193,7 +192,7 @@
             // btnUp
             // 
             this.btnUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnUp.Location = new System.Drawing.Point(538, 136);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(105, 43);
@@ -205,7 +204,7 @@
             // btnDown
             // 
             this.btnDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDown.Location = new System.Drawing.Point(538, 185);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(105, 43);

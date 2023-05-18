@@ -44,7 +44,7 @@ namespace Аудиоплеер
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            if (Playlist.Items.Count != 0) /*&& (Playlist.SelectedIndex != 1))*/
+            if ((Playlist.Items.Count != 0) && (Playlist.SelectedIndex != -1))
             {
                 string current = Vars.Files[Playlist.SelectedIndex];
                 Vars.CurrentTrackNumber = Playlist.SelectedIndex;
@@ -165,7 +165,8 @@ namespace Аудиоплеер
 
                 Playlist.Items.RemoveAt(Playlist.SelectedIndex);
                 Playlist.Items.Insert(index-1, text);
-                
+                Playlist.SelectedIndex = index - 1;
+
             }
 
         }
@@ -187,6 +188,7 @@ namespace Аудиоплеер
 
                 Playlist.Items.RemoveAt(Playlist.SelectedIndex);
                 Playlist.Items.Insert(index + 1, text);
+                Playlist.SelectedIndex = index + 1;
 
             }
         }
