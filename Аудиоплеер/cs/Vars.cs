@@ -20,6 +20,11 @@ namespace Аудиоплеер
 
         public static List<string> Files = new List<string>();
 
+        /// <summary>
+        /// Текущий номер трека
+        /// </summary>
+        public static int CurrentTrackNumber;
+
         public static string GerFileName(string file)
         {
             string[] tmp = file.Split('\\');

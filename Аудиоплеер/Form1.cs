@@ -47,6 +47,7 @@ namespace Аудиоплеер
             if (Playlist.Items.Count != 0) /*&& (Playlist.SelectedIndex != 1))*/
             {
                 string current = Vars.Files[Playlist.SelectedIndex];
+                Vars.CurrentTrackNumber = Playlist.SelectedIndex;
                 BassLike.Play(current, BassLike.Volume);
                 label1.Text = TimeSpan.FromSeconds(BassLike.GetPosOfStream(BassLike.Stream)).ToString();
                 label2.Text = TimeSpan.FromSeconds(BassLike.GetTimeOfStream(BassLike.Stream)).ToString();
@@ -69,6 +70,21 @@ namespace Аудиоплеер
         {
             label1.Text = TimeSpan.FromSeconds(BassLike.GetPosOfStream(BassLike.Stream)).ToString();
             slTime.Value = BassLike.GetPosOfStream(BassLike.Stream);
+
+            if (BassLike.ToNextTrack())
+            {
+                Playlist.SelectedIndex = Vars.CurrentTrackNumber;
+                label1.Text = TimeSpan.FromSeconds(BassLike.GetPosOfStream(BassLike.Stream)).ToString();
+                label2.Text = TimeSpan.FromSeconds(BassLike.GetTimeOfStream(BassLike.Stream)).ToString();
+                slTime.Maximum = BassLike.GetTimeOfStream(BassLike.Stream);
+                slTime.Value = 0;
+            }
+            if (BassLike.EndPlaylist)
+            {
+                btnStop_Click(this, new EventArgs());
+                Playlist.SelectedIndex = Vars.CurrentTrackNumber = 0;
+                BassLike.EndPlaylist = false;
+            }
         }
 
         private void slTime_Scroll(object sender, EventArgs e)
@@ -156,7 +172,7 @@ namespace Аудиоплеер
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            if (Playlist.SelectedIndex < Playlist.Items.Count)
+            if ((Playlist.SelectedIndex < Playlist.Items.Count - 1) && (Playlist.SelectedIndex != -1))
             {
                 BassLike.Stop();
                 timer1.Enabled = false;

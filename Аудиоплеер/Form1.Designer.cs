@@ -169,9 +169,10 @@
             // btn_del
             // 
             this.btn_del.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_del.Location = new System.Drawing.Point(538, 54);
             this.btn_del.Name = "btn_del";
-            this.btn_del.Size = new System.Drawing.Size(91, 53);
+            this.btn_del.Size = new System.Drawing.Size(105, 53);
             this.btn_del.TabIndex = 9;
             this.btn_del.Text = "Удалить";
             this.btn_del.UseVisualStyleBackColor = true;
@@ -192,9 +193,10 @@
             // btnUp
             // 
             this.btnUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnUp.Location = new System.Drawing.Point(538, 136);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(91, 43);
+            this.btnUp.Size = new System.Drawing.Size(105, 43);
             this.btnUp.TabIndex = 12;
             this.btnUp.Text = "Вверх по списку";
             this.btnUp.UseVisualStyleBackColor = true;
@@ -203,9 +205,10 @@
             // btnDown
             // 
             this.btnDown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDown.Location = new System.Drawing.Point(538, 185);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(91, 43);
+            this.btnDown.Size = new System.Drawing.Size(105, 43);
             this.btnDown.TabIndex = 13;
             this.btnDown.Text = "Вниз по списку";
             this.btnDown.UseVisualStyleBackColor = true;

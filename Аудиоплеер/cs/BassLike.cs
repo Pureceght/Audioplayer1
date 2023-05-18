@@ -26,8 +26,18 @@ namespace Аудиоплеер
         /// Громкость
         /// </summary>
         public static int Volume = 100;
+        /// <summary>
+        /// Канал остановлен руками
+        /// </summary>
+        private static bool isStoped = true;
+        /// <summary>
+        /// Треклист полностью проигран
+        /// </summary>
+        public static bool EndPlaylist;
+
         //^^^ПЕРЕМЕННЫЕ^^^//
-        private static readonly List<int> BassPluginsHandles = new List<int>();    
+        private static readonly List<int> BassPluginsHandles = new List<int>();
+
         public static bool InitBass(int hz)
         {
             if (!InitDefaultDevice)
@@ -86,6 +96,7 @@ namespace Аудиоплеер
             }
             else
                 Bass.BASS_ChannelPlay(Stream, false);
+            isStoped = false;
         }
         /// <summary>
         /// Стоп
@@ -94,6 +105,7 @@ namespace Аудиоплеер
         {
             Bass.BASS_ChannelStop(Stream);
             Bass.BASS_StreamFree(Stream);
+            isStoped = true;
         }
 
         public static void Pause()
@@ -138,6 +150,21 @@ namespace Аудиоплеер
         {
             Volume = vol;
             Bass.BASS_ChannelSetAttribute(stream, BASSAttribute.BASS_ATTRIB_VOL, Volume / 100F);
+        }
+        public static bool ToNextTrack()
+        {
+            if((Bass.BASS_ChannelIsActive(Stream) == BASSActive.BASS_ACTIVE_STOPPED) && (!isStoped))
+            {
+                if(Vars.Files.Count > Vars.CurrentTrackNumber + 1)
+                {
+                    Play(Vars.Files[++Vars.CurrentTrackNumber], Volume);
+                    EndPlaylist = false;
+                    return true;
+                }
+                else
+                    EndPlaylist = true;
+            }
+            return false;
         }
     }
 }
