@@ -11,6 +11,8 @@ namespace Аудиоплеер
     /// </summary>
     public static class Vars
     {
+        public static Form1 Link;
+
         /// <summary>
         /// Путь к исполняемому файлу
         /// </summary>
@@ -22,6 +24,12 @@ namespace Аудиоплеер
         {
             string[] tmp = file.Split('\\');
             return tmp[tmp.Length - 1];
+        }
+        public static void SetInputFormats()
+        {
+            Link.openFileDialog1.Filter = "MPEG Audio Layer III (*.mp3)|*.mp3" +
+        "|OPUS Audio (*.opus)|*.opus" +
+        "|OGG Vorbis Audio (*.ogg)|*.ogg";
         }
     }
 }

@@ -15,7 +15,9 @@ namespace Аудиоплеер
         public Form1()
         {
             InitializeComponent();
+            Vars.Link = this;
             BassLike.InitBass(BassLike.HZ);
+            Vars.SetInputFormats();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,11 +39,12 @@ namespace Аудиоплеер
                 TagModel TM = new TagModel(tmp[i]);
                 Playlist.Items.Add(TM.Artist + " - " + TM.Title);
             }
+            tmp = null;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            if ((Playlist.Items.Count != 0) && (Playlist.SelectedIndex != 1))
+            if (Playlist.Items.Count != 0) /*&& (Playlist.SelectedIndex != 1))*/
             {
                 string current = Vars.Files[Playlist.SelectedIndex];
                 BassLike.Play(current, BassLike.Volume);
@@ -67,7 +70,7 @@ namespace Аудиоплеер
             slTime.Value = BassLike.GetPosOfStream(BassLike.Stream);
         }
 
-        private void slTime_Scroll(object sender, ScrollEventArgs e)
+        private void slTime_Scroll(object sender, EventArgs e)
         {
             BassLike.SetPosOfScroll(BassLike.Stream, slTime.Value);
         }
@@ -80,6 +83,46 @@ namespace Аудиоплеер
         private void btnPause_Click(object sender, EventArgs e)
         {
             BassLike.Pause();
+        }
+        /*static void RemoveEl(ref string[] array, int index)
+        {
+            string[] newArray = new string[array.Length - 1];
+            for(int i = 0; i < index; i++)
+                newArray[i] = array[i];
+            for(int i = index + 1; i < array.Length; i++)
+                newArray[i - 1] = array[i];
+            array = newArray;
+        }*/
+        private void btn_del_Click(object sender, EventArgs e)
+        {
+            if(Playlist.SelectedIndex > 0)
+            {
+                Vars.Files.RemoveAt(Playlist.SelectedIndex);
+                Playlist.Items.RemoveAt(Playlist.SelectedIndex);
+                BassLike.Stop();
+                timer1.Enabled = false;
+                slTime.Value = 0;
+                label1.Text = "00:00:00";
+                Playlist.SelectedIndex = 0;
+                //RemoveEl(ref tmp, Playlist.SelectedIndex);
+            }
+            else if (Playlist.SelectedIndex == 0)
+            {
+                Vars.Files.RemoveAt(Playlist.SelectedIndex);
+                Playlist.Items.RemoveAt(Playlist.SelectedIndex);
+                BassLike.Stop();
+                timer1.Enabled = false;
+                slTime.Value = 0;
+                label1.Text = "00:00:00";
+            }
+            else if (Playlist.Items.Count == 0)
+            {
+                BassLike.Stop();
+                timer1.Enabled = false;
+                slTime.Value = 0;
+                label1.Text = "00:00:00";
+            }                
+
         }
     }
 }

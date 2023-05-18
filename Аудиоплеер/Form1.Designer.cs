@@ -33,13 +33,15 @@
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnEj = new System.Windows.Forms.Button();
-            this.slTime = new MB.Controls.ColorSlider();
             this.slVol = new MB.Controls.ColorSlider();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnPause = new System.Windows.Forms.Button();
+            this.slTime = new MB.Controls.ColorSlider();
+            this.btn_del = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Playlist
@@ -86,22 +88,6 @@
             this.btnEj.TabIndex = 3;
             this.btnEj.UseVisualStyleBackColor = true;
             this.btnEj.Click += new System.EventHandler(this.btnEj_Click);
-            // 
-            // slTime
-            // 
-            this.slTime.BackColor = System.Drawing.Color.Transparent;
-            this.slTime.BarInnerColor = System.Drawing.Color.Black;
-            this.slTime.BorderRoundRectSize = new System.Drawing.Size(8, 8);
-            this.slTime.LargeChange = ((uint)(5u));
-            this.slTime.Location = new System.Drawing.Point(39, 305);
-            this.slTime.Name = "slTime";
-            this.slTime.Size = new System.Drawing.Size(304, 30);
-            this.slTime.SmallChange = ((uint)(1u));
-            this.slTime.TabIndex = 4;
-            this.slTime.Text = "colorSlider1";
-            this.slTime.ThumbRoundRectSize = new System.Drawing.Size(8, 8);
-            this.slTime.Value = 0;
-            this.slTime.Scroll += new System.Windows.Forms.ScrollEventHandler(this.slTime_Scroll);
             // 
             // slVol
             // 
@@ -160,12 +146,51 @@
             this.btnPause.UseVisualStyleBackColor = true;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
+            // slTime
+            // 
+            this.slTime.BackColor = System.Drawing.Color.Transparent;
+            this.slTime.BarInnerColor = System.Drawing.Color.Black;
+            this.slTime.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+            this.slTime.LargeChange = ((uint)(5u));
+            this.slTime.Location = new System.Drawing.Point(39, 305);
+            this.slTime.Name = "slTime";
+            this.slTime.Size = new System.Drawing.Size(304, 30);
+            this.slTime.SmallChange = ((uint)(1u));
+            this.slTime.TabIndex = 4;
+            this.slTime.Text = "colorSlider1";
+            this.slTime.ThumbRoundRectSize = new System.Drawing.Size(8, 8);
+            this.slTime.Value = 0;
+            this.slTime.Scroll += new System.Windows.Forms.ScrollEventHandler(this.slTime_Scroll);
+            // 
+            // btn_del
+            // 
+            this.btn_del.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_del.Location = new System.Drawing.Point(538, 28);
+            this.btn_del.Name = "btn_del";
+            this.btn_del.Size = new System.Drawing.Size(91, 53);
+            this.btn_del.TabIndex = 9;
+            this.btn_del.Text = "Delete";
+            this.btn_del.UseVisualStyleBackColor = true;
+            this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(44, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "label3";
+            // 
             // Form1
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(543, 450);
+            this.ClientSize = new System.Drawing.Size(673, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_del);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -175,7 +200,9 @@
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.Playlist);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(691, 497);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Аудиоплеер";
@@ -190,13 +217,15 @@
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnEj;
-        private MB.Controls.ColorSlider slTime;
         private MB.Controls.ColorSlider slVol;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnPause;
+        private MB.Controls.ColorSlider slTime;
+        public System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btn_del;
+        private System.Windows.Forms.Label label3;
     }
 }
 
