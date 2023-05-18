@@ -132,6 +132,8 @@
     <Content Include="plugins\bass_tta.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\player_fwd_1145.png" />
+    <None Include="Resources\player_start_7417.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -39,7 +39,7 @@ namespace Аудиоплеер
                 TagModel TM = new TagModel(tmp[i]);
                 Playlist.Items.Add(TM.Artist + " - " + TM.Title);
             }
-            
+            Playlist.SelectedIndex = 0;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -190,6 +190,22 @@ namespace Аудиоплеер
                 Playlist.Items.Insert(index + 1, text);
                 Playlist.SelectedIndex = index + 1;
 
+            }
+        }
+
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            if((Playlist.SelectedIndex != -1) && (Playlist.SelectedIndex != Playlist.Items.Count - 1))
+            {
+                Playlist.SelectedIndex++;
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if ((Playlist.SelectedIndex != -1) && (Playlist.SelectedIndex != 0))
+            {
+                Playlist.SelectedIndex--;
             }
         }
     }

@@ -31,20 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Playlist = new System.Windows.Forms.ListBox();
-            this.btnPlay = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.btnEj = new System.Windows.Forms.Button();
             this.slVol = new MB.Controls.ColorSlider();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnPause = new System.Windows.Forms.Button();
             this.slTime = new MB.Controls.ColorSlider();
             this.btn_del = new System.Windows.Forms.Button();
             this.Плейлист = new System.Windows.Forms.TextBox();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnGo = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnEj = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnPlay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Playlist
@@ -58,40 +60,6 @@
             this.Playlist.TabIndex = 0;
             this.Playlist.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.Playlist.DoubleClick += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // btnPlay
-            // 
-            this.btnPlay.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_play_5157;
-            this.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPlay.Location = new System.Drawing.Point(39, 376);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(50, 50);
-            this.btnPlay.TabIndex = 1;
-            this.btnPlay.UseVisualStyleBackColor = true;
-            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // btnStop
-            // 
-            this.btnStop.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_stop_1977;
-            this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStop.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnStop.Location = new System.Drawing.Point(198, 376);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(50, 50);
-            this.btnStop.TabIndex = 2;
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
-            // 
-            // btnEj
-            // 
-            this.btnEj.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_eject_8621;
-            this.btnEj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEj.Location = new System.Drawing.Point(445, 376);
-            this.btnEj.Name = "btnEj";
-            this.btnEj.Size = new System.Drawing.Size(50, 50);
-            this.btnEj.TabIndex = 3;
-            this.btnEj.UseVisualStyleBackColor = true;
-            this.btnEj.Click += new System.EventHandler(this.btnEj_Click);
             // 
             // slVol
             // 
@@ -137,18 +105,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnPause
-            // 
-            this.btnPause.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_pause_1018;
-            this.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPause.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPause.Location = new System.Drawing.Point(95, 376);
-            this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(50, 50);
-            this.btnPause.TabIndex = 8;
-            this.btnPause.UseVisualStyleBackColor = true;
-            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // slTime
             // 
@@ -213,6 +169,76 @@
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_start_7417;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBack.Location = new System.Drawing.Point(39, 376);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 50);
+            this.btnBack.TabIndex = 15;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnGo
+            // 
+            this.btnGo.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_fwd_1145;
+            this.btnGo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnGo.Location = new System.Drawing.Point(151, 376);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(50, 50);
+            this.btnGo.TabIndex = 14;
+            this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            // 
+            // btnPause
+            // 
+            this.btnPause.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_pause_1018;
+            this.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPause.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPause.Location = new System.Drawing.Point(237, 376);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(50, 50);
+            this.btnPause.TabIndex = 8;
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // btnEj
+            // 
+            this.btnEj.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_eject_8621;
+            this.btnEj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEj.Location = new System.Drawing.Point(445, 376);
+            this.btnEj.Name = "btnEj";
+            this.btnEj.Size = new System.Drawing.Size(50, 50);
+            this.btnEj.TabIndex = 3;
+            this.btnEj.UseVisualStyleBackColor = true;
+            this.btnEj.Click += new System.EventHandler(this.btnEj_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_stop_1977;
+            this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStop.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnStop.Location = new System.Drawing.Point(293, 376);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(50, 50);
+            this.btnStop.TabIndex = 2;
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_play_5157;
+            this.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlay.Location = new System.Drawing.Point(95, 376);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(50, 50);
+            this.btnPlay.TabIndex = 1;
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -220,6 +246,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(673, 466);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnGo);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.Плейлист);
@@ -262,6 +290,8 @@
         private System.Windows.Forms.TextBox Плейлист;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.Button btnBack;
     }
 }
 

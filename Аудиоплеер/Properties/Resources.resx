@@ -121,13 +121,19 @@
   <data name="player_play_5157" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\player_play_5157.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player_eject_8621" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_eject_8621.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="player_start_7417" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player_start_7417.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="player_stop_1977" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\player_stop_1977.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="player_eject_8621" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player_eject_8621.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="player_pause_1018" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\player_pause_1018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player_fwd_1145" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player_fwd_1145.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
