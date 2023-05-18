@@ -24,3 +24,5 @@ C:\Users\maksi\Desktop\Ознакомительная практика\Ауди�
 C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\plugins\basswma.dll
 C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\plugins\basswv.dll
 C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\plugins\bass_tta.dll
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\Newtonsoft.Json.dll
+C:\Users\maksi\Desktop\Ознакомительная практика\Аудиоплеер\Audioplayer1\Аудиоплеер\bin\Debug\Newtonsoft.Json.xml

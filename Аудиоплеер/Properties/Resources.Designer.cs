@@ -63,6 +63,16 @@ namespace Аудиоплеер.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap filesaveas_5884 {
+            get {
+                object obj = ResourceManager.GetObject("filesaveas_5884", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap player_eject_8621 {
             get {
                 object obj = ResourceManager.GetObject("player_eject_8621", resourceCulture);
@@ -116,6 +126,16 @@ namespace Аудиоплеер.Properties {
         internal static System.Drawing.Bitmap player_stop_1977 {
             get {
                 object obj = ResourceManager.GetObject("player_stop_1977", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_7200 {
+            get {
+                object obj = ResourceManager.GetObject("save_7200", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
