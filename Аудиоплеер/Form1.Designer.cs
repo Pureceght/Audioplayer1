@@ -47,6 +47,10 @@
             this.btnEj = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
+            this.srch = new System.Windows.Forms.TextBox();
+            this.btnSrch = new System.Windows.Forms.Button();
+            this.btnClr = new System.Windows.Forms.Button();
+            this.sprvk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Playlist
@@ -54,7 +58,7 @@
             this.Playlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Playlist.FormattingEnabled = true;
             this.Playlist.ItemHeight = 20;
-            this.Playlist.Location = new System.Drawing.Point(39, 54);
+            this.Playlist.Location = new System.Drawing.Point(37, 92);
             this.Playlist.Name = "Playlist";
             this.Playlist.Size = new System.Drawing.Size(456, 244);
             this.Playlist.TabIndex = 0;
@@ -67,7 +71,7 @@
             this.slVol.BarInnerColor = System.Drawing.Color.Black;
             this.slVol.BorderRoundRectSize = new System.Drawing.Size(8, 8);
             this.slVol.LargeChange = ((uint)(5u));
-            this.slVol.Location = new System.Drawing.Point(373, 320);
+            this.slVol.Location = new System.Drawing.Point(373, 374);
             this.slVol.Name = "slVol";
             this.slVol.Size = new System.Drawing.Size(122, 30);
             this.slVol.SmallChange = ((uint)(1u));
@@ -80,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 301);
+            this.label1.Location = new System.Drawing.Point(34, 355);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 6;
@@ -89,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 301);
+            this.label2.Location = new System.Drawing.Point(290, 355);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 16);
             this.label2.TabIndex = 7;
@@ -112,7 +116,7 @@
             this.slTime.BarInnerColor = System.Drawing.Color.Black;
             this.slTime.BorderRoundRectSize = new System.Drawing.Size(8, 8);
             this.slTime.LargeChange = ((uint)(5u));
-            this.slTime.Location = new System.Drawing.Point(39, 320);
+            this.slTime.Location = new System.Drawing.Point(39, 374);
             this.slTime.Name = "slTime";
             this.slTime.Size = new System.Drawing.Size(304, 30);
             this.slTime.SmallChange = ((uint)(1u));
@@ -125,8 +129,8 @@
             // btn_del
             // 
             this.btn_del.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_del.Location = new System.Drawing.Point(538, 54);
+            this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_del.Location = new System.Drawing.Point(538, 92);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(105, 53);
             this.btn_del.TabIndex = 9;
@@ -138,18 +142,18 @@
             // 
             this.Плейлист.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Плейлист.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Плейлист.Location = new System.Drawing.Point(39, 20);
+            this.Плейлист.Location = new System.Drawing.Point(39, 58);
             this.Плейлист.Name = "Плейлист";
             this.Плейлист.ReadOnly = true;
-            this.Плейлист.Size = new System.Drawing.Size(170, 28);
+            this.Плейлист.Size = new System.Drawing.Size(150, 28);
             this.Плейлист.TabIndex = 11;
             this.Плейлист.Text = "Ваш плейлист";
             // 
             // btnUp
             // 
             this.btnUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUp.Location = new System.Drawing.Point(538, 136);
+            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUp.Location = new System.Drawing.Point(538, 195);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(105, 43);
             this.btnUp.TabIndex = 12;
@@ -160,8 +164,8 @@
             // btnDown
             // 
             this.btnDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDown.Location = new System.Drawing.Point(538, 185);
+            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDown.Location = new System.Drawing.Point(538, 256);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(105, 43);
             this.btnDown.TabIndex = 13;
@@ -174,7 +178,7 @@
             this.btnBack.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_start_7417;
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBack.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBack.Location = new System.Drawing.Point(39, 376);
+            this.btnBack.Location = new System.Drawing.Point(37, 435);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(50, 50);
             this.btnBack.TabIndex = 15;
@@ -186,7 +190,7 @@
             this.btnGo.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_fwd_1145;
             this.btnGo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGo.Location = new System.Drawing.Point(151, 376);
+            this.btnGo.Location = new System.Drawing.Point(151, 435);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(50, 50);
             this.btnGo.TabIndex = 14;
@@ -198,7 +202,7 @@
             this.btnPause.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_pause_1018;
             this.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPause.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPause.Location = new System.Drawing.Point(237, 376);
+            this.btnPause.Location = new System.Drawing.Point(235, 435);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(50, 50);
             this.btnPause.TabIndex = 8;
@@ -209,7 +213,7 @@
             // 
             this.btnEj.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_eject_8621;
             this.btnEj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEj.Location = new System.Drawing.Point(445, 376);
+            this.btnEj.Location = new System.Drawing.Point(445, 435);
             this.btnEj.Name = "btnEj";
             this.btnEj.Size = new System.Drawing.Size(50, 50);
             this.btnEj.TabIndex = 3;
@@ -221,7 +225,7 @@
             this.btnStop.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_stop_1977;
             this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStop.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnStop.Location = new System.Drawing.Point(293, 376);
+            this.btnStop.Location = new System.Drawing.Point(293, 435);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(50, 50);
             this.btnStop.TabIndex = 2;
@@ -232,12 +236,53 @@
             // 
             this.btnPlay.BackgroundImage = global::Аудиоплеер.Properties.Resources.player_play_5157;
             this.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPlay.Location = new System.Drawing.Point(95, 376);
+            this.btnPlay.Location = new System.Drawing.Point(95, 435);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(50, 50);
             this.btnPlay.TabIndex = 1;
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // srch
+            // 
+            this.srch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.srch.Location = new System.Drawing.Point(210, 58);
+            this.srch.MaxLength = 100;
+            this.srch.Name = "srch";
+            this.srch.Size = new System.Drawing.Size(283, 28);
+            this.srch.TabIndex = 16;
+            // 
+            // btnSrch
+            // 
+            this.btnSrch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSrch.Location = new System.Drawing.Point(210, 26);
+            this.btnSrch.Name = "btnSrch";
+            this.btnSrch.Size = new System.Drawing.Size(75, 28);
+            this.btnSrch.TabIndex = 17;
+            this.btnSrch.Text = "Поиск";
+            this.btnSrch.UseVisualStyleBackColor = true;
+            this.btnSrch.Click += new System.EventHandler(this.btnSrch_Click);
+            // 
+            // btnClr
+            // 
+            this.btnClr.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnClr.Location = new System.Drawing.Point(289, 26);
+            this.btnClr.Name = "btnClr";
+            this.btnClr.Size = new System.Drawing.Size(93, 28);
+            this.btnClr.TabIndex = 18;
+            this.btnClr.Text = "Очистить";
+            this.btnClr.UseVisualStyleBackColor = true;
+            this.btnClr.Click += new System.EventHandler(this.btnClr_Click);
+            // 
+            // sprvk
+            // 
+            this.sprvk.Location = new System.Drawing.Point(388, 26);
+            this.sprvk.Name = "sprvk";
+            this.sprvk.Size = new System.Drawing.Size(105, 28);
+            this.sprvk.TabIndex = 19;
+            this.sprvk.Text = "Справка";
+            this.sprvk.UseVisualStyleBackColor = true;
+            this.sprvk.Click += new System.EventHandler(this.sprvk_Click);
             // 
             // Form1
             // 
@@ -245,7 +290,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(673, 466);
+            this.ClientSize = new System.Drawing.Size(673, 497);
+            this.Controls.Add(this.sprvk);
+            this.Controls.Add(this.btnClr);
+            this.Controls.Add(this.btnSrch);
+            this.Controls.Add(this.srch);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.btnDown);
@@ -264,8 +313,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(691, 497);
+            this.MinimumSize = new System.Drawing.Size(691, 544);
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Аудиоплеер";
             this.ResumeLayout(false);
@@ -292,6 +342,10 @@
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Button btnBack;
+        public System.Windows.Forms.TextBox srch;
+        private System.Windows.Forms.Button btnSrch;
+        private System.Windows.Forms.Button btnClr;
+        public System.Windows.Forms.Button sprvk;
     }
 }
 

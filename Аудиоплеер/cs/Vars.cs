@@ -22,6 +22,12 @@ namespace Аудиоплеер
 
         public static List<string> Files = new List<string>();
 
+
+        /// <summary>
+        /// Список файлов после команды поиск
+        /// </summary>
+        public static List<string> Files2 = new List<string>();
+
         /// <summary>
         /// Текущий номер трека
         /// </summary>

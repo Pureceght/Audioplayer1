@@ -212,5 +212,25 @@ namespace Аудиоплеер
                 Playlist.SelectedIndex--;
             }
         }
+
+        private void btnSrch_Click(object sender, EventArgs e)
+        {
+            Playlist.SelectedIndex = 0;
+            String txt = srch.Text.ToString();
+            String txt2 = Playlist.SelectedItem.ToString();
+            Playlist.FindString(txt);
+            Playlist.SelectedIndex = Playlist.FindString(txt);
+        }
+
+        private void btnClr_Click(object sender, EventArgs e)
+        {
+            srch.Clear();
+        }
+
+        private void sprvk_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Поиск аудиозаписей осуществляется в окне поиска\n\n" +
+                "Необходимо ввести точное название в формате:\n' - Автор - Название'\n\n", "Справка", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }
